@@ -24,3 +24,4 @@ jobs:
           echo '${{ toJson(secrets) }}'
           echo '${{ toJson(steps) }}'
           echo '${{ toJson(runner) }}'
+
