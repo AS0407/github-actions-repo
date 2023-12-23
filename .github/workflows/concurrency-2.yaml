@@ -1,0 +1,19 @@
+name: Concurrency 2
+run-name: Concurrency 2 (${{ inputs.environment }})
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment"
+        type: environment
+        required: true
+
+concurrency:
+#group: ${{ github.event.inputs.environment }} //It will interfere with the concurrency-1 workflow and cancel the runs of the same envs. In order to avoid this scenario us github.workflow
+  group: ${{ github.workflow }}-${{ github.event.inputs.environment }}
+  cancel-in-progress: true
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 30
