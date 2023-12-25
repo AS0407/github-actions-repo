@@ -13,11 +13,11 @@ on:
         required: true
 
 jobs:
-  checkout:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: ls -a
+  # checkout:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: ls -a
   log-context-and-inputs:
     runs-on: ubuntu-latest
     steps:
