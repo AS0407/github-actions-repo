@@ -26,7 +26,7 @@ jobs:
       - name: Log Env
         run: echo $API_URL
       - name: Container in a Step
-        uses: docker://node:18.16-alpine3.17
+        uses: docker://node:18.16-alpine3.17 #here, this container will run parallely with the step1 container and will share the same network.
         with:
           entrypoint: /usr/local/bin/node
           args: -p 2+3
